@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="331.0" prefWidth="237.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.inalkar.tools.agile.notes.sprint.controller.SprintWindowController">
+   <children>
+      <VBox layoutX="223.0" layoutY="39.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefWidth="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label styleClass="h1" text="Sprint">
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Name">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="sprintTitle" maxWidth="100.0">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <HBox prefWidth="200.0" spacing="15.0">
+                                 <children>
+                                    <VBox prefWidth="100.0">
+                                       <children>
+                                          <Label text="Start Date">
+                                             <padding>
+                                                <Insets bottom="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <DatePicker fx:id="sprintStartDate" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefWidth="100.0">
+                                       <children>
+                                          <Label text="End Date">
+                                             <padding>
+                                                <Insets bottom="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <DatePicker fx:id="sprintEndDate" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <Label text="RRF Due">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <DatePicker fx:id="sprintRRFDue" prefWidth="100.0">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </DatePicker>
+                              <HBox prefWidth="200.0" spacing="15.0">
+                                 <children>
+                                    <VBox prefWidth="100.0">
+                                       <children>
+                                          <Label text="Stage Date">
+                                             <padding>
+                                                <Insets bottom="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <DatePicker fx:id="sprintStageDate" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefWidth="100.0">
+                                       <children>
+                                          <Label text="Prod Date">
+                                             <padding>
+                                                <Insets bottom="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <DatePicker fx:id="sprintProdDate" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <HBox prefWidth="200.0" styleClass="top-border">
+               <children>
+                  <ToolBar prefHeight="40.0" prefWidth="128.0" HBox.hgrow="ALWAYS">
+                     <items>
+                        <Button defaultButton="true" mnemonicParsing="false" onAction="#save" text="Save" />
+                     </items>
+                  </ToolBar>
+                  <ToolBar prefHeight="40.0">
+                     <items>
+                        <Button cancelButton="true" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+                     </items>
+                  </ToolBar>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
