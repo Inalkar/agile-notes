@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="331.0" prefWidth="237.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.inalkar.tools.agile.notes.sprint.controller.SprintWindowController">
+<AnchorPane prefHeight="331.0" prefWidth="237.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox layoutX="223.0" layoutY="39.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>

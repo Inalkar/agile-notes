@@ -15,15 +15,15 @@ public class AbstractWindow extends Stage {
     protected Scene scene;
 
     @SuppressWarnings("unchecked")
-    public void setFXMLTemplate(String fxmlName) throws IOException {
+    public void setFXMLTemplate(String fxmlName, Object controller) throws IOException {
         FXMLLoader f;
         try {
-            f = new FXMLLoader();
-            final Parent fxmlRoot = f.load(getClass().getClassLoader().getResource(fxmlName));
+            f = new FXMLLoader(getClass().getClassLoader().getResource(fxmlName));
+            if (controller != null) f.setController(controller);
+            final Parent fxmlRoot = f.load();
             scene = new Scene(fxmlRoot);
             scene.getStylesheets().add(MAIN_STYLE);
             setScene(scene);
-            lookupComponents(fxmlRoot);
         } finally {
             f = null;
         }

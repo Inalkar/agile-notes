@@ -16,46 +16,35 @@ import java.util.concurrent.CompletableFuture;
 @Component
 public class SprintWindow extends AbstractWindow {
     
-    @Autowired
-    private SprintWindowController sprintWindowController;
-    
-    private static final Logger logger = LogManager.getLogger(SprintWindow.class);
-    protected Scene scene;
+    private static final Logger LOG = LogManager.getLogger(SprintWindow.class);
 
-    public SprintWindow() throws IOException {
+    protected Scene scene;
+    private SprintWindowController controller;
+
+    @Autowired
+    public SprintWindow(SprintWindowController sprintWindowController) throws IOException {
+        controller = sprintWindowController;
         setTitle("Edit Sprint");
         setHeight(600);
         setWidth(450);
-        setFXMLTemplate("view/EditSprint.fxml");
+        setFXMLTemplate("view/EditSprint.fxml", sprintWindowController);
         setModal(true);
     }
 
     public void editSprint(Sprint sprint) {
-        sprintWindowController.setSprint(sprint);
+        controller.setSprint(sprint);
 //        ProductEditWindow wnd = new ProductEditWindow(p);
 //        productController.getBtn_ok().setOnAction(actionEvent -> {
 //            productController.showLoadMask();
-//            CompletableFuture.runAsync(() -> {
-//                try {
-//                    productController.updateProduct();
-//                    siteService.updateProduct(p);
-//                } catch (Exception e) {
-//                    throw new RuntimeException(e);
-//                }
-//            }).thenAccept((Void) -> Platform.runLater(() -> {
-//                productController.hideLoadMask();
-//                wnd.close();
-//            })).exceptionally((e) -> {
-//                productController.hideLoadMask();
-//                logger.catching(e);
-//                error(i18n.getProperty("msg.error.product.cant.save"));
-//                return null;
-//            });
+
 //        });
         this.showAndWait();
     }
 
-    public void addSprint(Sprint sprint) throws Exception {
+    public void addSprint() {
+        controller.setSprint(new Sprint());
+        controller.setWindow(this);
+        this.showAndWait();
 //        Product p = new Product();
 //        p.custom = 1;
 //        p.categoryID = c.categoryID;

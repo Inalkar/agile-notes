@@ -46,7 +46,7 @@ public class ErrorDialogsUtil extends DialogsUtil {
         exceptionDialog("", ex);
     }
 
-    public void exceptionDialog(String message, Exception ex) {
+    public void exceptionDialog(String message, Throwable ex) {
         Alert alert = createStyledAlert(Alert.AlertType.ERROR);
         alert.setTitle("Unexpected Error");
         alert.setHeaderText("An unexpected error has occurred");
