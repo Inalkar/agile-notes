@@ -1,15 +1,20 @@
 package com.inalkar.tools.agile.notes.sprint.view;
 
 import com.inalkar.tools.agile.notes.sprint.dto.Sprint;
+import com.inalkar.tools.agile.notes.util.javafx.FXMLUtil;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
-import javafx.scene.layout.Region;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class SprintRegion extends Region {
+import static com.inalkar.tools.agile.notes.util.DateUtil.formatDate;
+
+public class SprintRegion extends AnchorPane {
 
     private Sprint sprint;
     private TitledPane mainPane;
@@ -18,6 +23,7 @@ public class SprintRegion extends Region {
     private Label rrfDueLabel;
     private Label stageReleaseLabel;
     private Label prodReleaseLabel;
+    private Button addTicketBtn;
 
     public SprintRegion(Sprint sprint) {
         if (sprint == null) throw new NullPointerException();
@@ -43,16 +49,26 @@ public class SprintRegion extends Region {
     }
 
     private void lookupComponents() {
-        sprintStartLabel = (Label) lookup("#sprintStartLabel");
-        sprintEndLabel = (Label) lookup("#sprintEndLabel");
-        rrfDueLabel = (Label) lookup("#rrfDueLabel");
-        stageReleaseLabel = (Label) lookup("#stageReleaseLabel");
-        prodReleaseLabel = (Label) lookup("#prodReleaseLabel");
+        sprintStartLabel = (Label) FXMLUtil.lookup(this, "sprintStartLabel");
+        sprintEndLabel = (Label) FXMLUtil.lookup(this, "sprintEndLabel");
+        rrfDueLabel = (Label) FXMLUtil.lookup(this, "rrfDueLabel");
+        stageReleaseLabel = (Label) FXMLUtil.lookup(this, "stageReleaseLabel");
+        prodReleaseLabel = (Label) FXMLUtil.lookup(this, "prodReleaseLabel");
+//        addTicketBtn = (Button) FXMLUtil.lookup(this, "addTicketBtn");
+//        addTicketBtn.setOnAction(this::addTicket);
     }
 
     private void setData() {
         mainPane.setText(sprint.title);
-        sprintStartLabel.setText(sprint.startTime.toString());
+        sprintStartLabel.setText(formatDate(sprint.startTime));
+        sprintEndLabel.setText(formatDate(sprint.endTime));
+        rrfDueLabel.setText(formatDate(sprint.rrfDue));
+        stageReleaseLabel.setText(formatDate(sprint.stageRelease));
+        prodReleaseLabel.setText(formatDate(sprint.prodRelease));
+    }
+    
+    private void addTicket(ActionEvent event) {
+        
     }
 
     public Sprint getSprint() {

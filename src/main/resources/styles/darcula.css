@@ -234,7 +234,6 @@
     -fx-background-insets: 0;
 }
 
-.list-view .corner,
 .tree-view .corner,
 .table-view .corner,
 .scroll-pane .corner,
@@ -331,7 +330,6 @@
     -fx-table-cell-border-color: #214283;
 }
 /* Selected when control is not focused */
-.list-cell:filled:selected,
 .tree-cell:filled:selected,
 .table-row-cell:filled:selected,
 .tree-table-row-cell:filled:selected,
@@ -342,7 +340,6 @@
     -fx-table-cell-border-color: #214283;
 }
 /* focused cell (keyboard navigation) */
-.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:focused,
 .tree-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-cell:focused,
 .table-view:focused:row-selection > .virtual-flow > .clipped-container > .sheet > .table-row-cell:focused,
 .tree-table-view:focused:row-selection > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:focused,
@@ -454,6 +451,104 @@
 
 /*******************************************************************************
  *                                                                             *
+ * TitledPane                                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+.titled-pane {
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.2) , 12, 0.0 , 0 , 8 );
+}
+
+.titled-pane:focused {
+    
+}
+
+.titled-pane > .title {
+    -fx-background-color: linear-gradient(to top, #44494B, #515658);
+    -fx-border-color: #515151;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3 3 0 0, 2 2 0 0, 1 1 0 0;
+    -fx-padding: 0.3333em 0.75em 0.3333em 0.75em; /* 4 9 4 9 */
+    -fx-border-width: 1px;
+}
+
+/* focus purely on the arrow */
+.titled-pane:focused > .title > .arrow-button > .arrow {
+    -fx-background-color: #ADADAD;
+    -fx-background-insets: 0;
+}
+.titled-pane > .title > .arrow-button {
+    -fx-background-color: null;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0.0em 0.583em 0.0em 0.0em; /* 0 7 0 0 */
+}
+.titled-pane > .title > .arrow-button > .arrow {
+    -fx-background-color: #ADADAD;
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
+    -fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+.titled-pane > .title:hover {
+    -fx-color: -fx-hover-base;
+}
+/* alternative content using a border and a grad to transparent background - why should TitledPane content have a colour? */
+.titled-pane > .content {
+    -fx-border-color: #515151;
+    -fx-border-insets: 0;
+    -fx-background-color: #45494A;
+    -fx-background-insets: 0;
+}
+
+.titled-pane > AnchorPane {
+    -fx-padding: 0px;
+}
+
+.titled-pane > .title > .text {
+    -fx-fill: #BBBBBB;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ListView                                                *
+ *                                                                             *
+ ******************************************************************************/
+
+/* remove double borders from scrollbars */
+.list-view {
+    -fx-border: 0;
+}
+.list-view > .virtual-flow > .scroll-bar:vertical {
+    -fx-background-color: rgb(62, 67, 76);
+}
+.list-view > .virtual-flow > .scroll-bar:horizontal {
+    -fx-background-color: rgb(62, 67, 76);
+}
+.list-view > .virtual-flow > .corner {
+    -fx-background-color: rgb(62, 67, 76);
+}
+/* standard cell */
+.list-cell {
+    -fx-background-color: rgb(62, 67, 76);
+    -fx-text-fill: rgb(140, 140, 140);
+}
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected {
+    -fx-background-color: rgb(52, 103, 206);
+    -fx-text-fill: white;
+}
+/* Selected when control is not focused */
+.list-view > .list-cell:selected {
+    -fx-background: rgb(52, 103, 206);
+    -fx-text-fill: white;
+}
+/* focused cell (keyboard navigation) */
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:focused {
+    -fx-background: rgb(52, 103, 206);
+    -fx-text-fill: white;
+}
+
+/*******************************************************************************
+ *                                                                             *
  * ScrollPane                                                                  *
  *                                                                             *
  ******************************************************************************/
@@ -509,31 +604,31 @@
 }
 
 .btn_add {
-    -fx-background-image: url("img/add.png");
+    -fx-background-image: url("/img/add.png");
 }
 
 .btn_selectall {
-    -fx-background-image: url("img/selectall.png");
+    -fx-background-image: url("/img/selectall.png");
 }
 
 .btn_unselectall {
-    -fx-background-image: url("img/unselectall.png");
+    -fx-background-image: url("/img/unselectall.png");
 }
 
 .btn_edit {
-     -fx-background-image: url("img/edit.png");
+     -fx-background-image: url("/img/edit.png");
  }
 
 .btn_delete {
-    -fx-background-image: url("img/remove.png");
+    -fx-background-image: url("/img/remove.png");
 }
 
 .btn_refresh {
-    -fx-background-image: url("img/refresh.png");
+    -fx-background-image: url("/img/refresh.png");
 }
 
 .btn_gear {
-    -fx-background-image: url("img/gear.png");
+    -fx-background-image: url("/img/gear.png");
 }
 
 .tree-view {
@@ -732,4 +827,14 @@
 .load-mask {
     -fx-background-color: #2B2B2B;
     -fx-opacity: 0.8;
+}
+
+.debug-region {
+    -fx-background-color: red;
+}
+.debug-region-2 {
+    -fx-background-color: green;
+}
+.debug-region-3 {
+    -fx-background-color: blue;
 }

@@ -2,9 +2,9 @@ package com.inalkar.tools.agile.notes.sprint.controller;
 
 import com.inalkar.tools.agile.notes.sprint.dto.Sprint;
 import com.inalkar.tools.agile.notes.sprint.service.ISprintService;
-import com.inalkar.tools.agile.notes.sprint.window.SprintWindow;
 import com.inalkar.tools.agile.notes.util.dialog.ErrorDialogsUtil;
 import com.inalkar.tools.agile.notes.util.javafx.AbstractWindow;
+import com.inalkar.tools.agile.notes.util.javafx.popup.AbstractPopupWindow;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,8 +15,6 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.time.ZoneId;
-import java.util.Date;
 import java.util.concurrent.CompletableFuture;
 
 import static com.inalkar.tools.agile.notes.util.DateUtil.dateToLocalDate;
@@ -27,7 +25,7 @@ public class SprintWindowController {
 
     private static final Logger LOG = LogManager.getLogger(SprintWindowController.class);
 
-    private AbstractWindow window;
+    private AbstractPopupWindow window;
     private Sprint sprint;
 
     @Autowired
@@ -128,7 +126,7 @@ public class SprintWindowController {
         }
     }
 
-    public void setWindow(AbstractWindow abstractWindow) {
+    public void setWindow(AbstractPopupWindow abstractWindow) {
         this.window = abstractWindow;
     }
 }
