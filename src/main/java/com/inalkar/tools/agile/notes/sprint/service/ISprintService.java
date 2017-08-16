@@ -1,8 +1,7 @@
 package com.inalkar.tools.agile.notes.sprint.service;
 
-import com.inalkar.tools.agile.notes.sprint.dto.Sprint;
+import com.inalkar.tools.agile.notes.sprint.service.dto.Sprint;
 
-import java.util.List;
 import java.util.stream.Stream;
 
 public interface ISprintService {

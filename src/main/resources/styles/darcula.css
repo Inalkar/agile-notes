@@ -50,6 +50,11 @@
     -fx-border-color: #515151;
 }
 
+.right-border {
+    -fx-border-width: 0px 1px 0px 0px;
+    -fx-border-color: #515151;
+}
+
 .button {
      -fx-font: 12px "Segoe UI";
      -fx-text-fill: #BBBBBB;
@@ -516,7 +521,9 @@
 
 /* remove double borders from scrollbars */
 .list-view {
-    -fx-border: 0;
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+    -fx-background-color: rgb(62, 67, 76);
 }
 .list-view > .virtual-flow > .scroll-bar:vertical {
     -fx-background-color: rgb(62, 67, 76);

@@ -1,9 +1,8 @@
-package com.inalkar.tools.agile.notes.sprint.controller;
+package com.inalkar.tools.agile.notes.sprint.view;
 
-import com.inalkar.tools.agile.notes.sprint.dto.Sprint;
+import com.inalkar.tools.agile.notes.sprint.service.dto.Sprint;
 import com.inalkar.tools.agile.notes.sprint.service.ISprintService;
 import com.inalkar.tools.agile.notes.util.dialog.ErrorDialogsUtil;
-import com.inalkar.tools.agile.notes.util.javafx.AbstractWindow;
 import com.inalkar.tools.agile.notes.util.javafx.popup.AbstractPopupWindow;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;

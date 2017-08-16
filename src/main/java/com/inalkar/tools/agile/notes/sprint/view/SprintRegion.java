@@ -1,6 +1,6 @@
 package com.inalkar.tools.agile.notes.sprint.view;
 
-import com.inalkar.tools.agile.notes.sprint.dto.Sprint;
+import com.inalkar.tools.agile.notes.sprint.service.dto.Sprint;
 import com.inalkar.tools.agile.notes.util.javafx.FXMLUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

@@ -1,6 +1,7 @@
-package com.inalkar.tools.agile.notes.main.controller;
+package com.inalkar.tools.agile.notes.main;
 
-import com.inalkar.tools.agile.notes.sprint.dto.Sprint;
+import com.inalkar.tools.agile.notes.settings.view.SettingsWindow;
+import com.inalkar.tools.agile.notes.sprint.service.dto.Sprint;
 import com.inalkar.tools.agile.notes.sprint.service.ISprintService;
 import com.inalkar.tools.agile.notes.sprint.view.SprintRegion;
 import com.inalkar.tools.agile.notes.sprint.view.SprintWindow;
@@ -32,6 +33,9 @@ public class MainController implements Initializable {
     private SprintWindow sprintWindow;
 
     @Autowired
+    private SettingsWindow settingsWindow;
+
+    @Autowired
     private ISprintService sprintService;
 
     @Autowired
@@ -45,6 +49,9 @@ public class MainController implements Initializable {
     
     @FXML
     private AnchorPane mainPane;
+
+    @FXML
+    private Button settingsBtn;
     
     @FXML
     void addSprint() {
@@ -54,8 +61,7 @@ public class MainController implements Initializable {
     
     @FXML
     void openSettings() {
-//        sprintWindow.setSprint(new Sprint());
-//        openEditSprintPopup();
+        settingsWindow.showFromNode(settingsBtn, mainPane);
     }
     
     @Override
@@ -77,10 +83,14 @@ public class MainController implements Initializable {
         mainPane.getChildren().add(sprintWindow);
         sprintWindow.setVisible(false);
         sprintWindow.setOnCloseEvent(this::closeEditSprintPopup);
+
+        mainPane.getChildren().add(settingsWindow);
+        settingsWindow.setVisible(false);
+        settingsWindow.setOnCloseEvent(() -> settingsWindow.hideToNode(settingsBtn));
     }
     
     private void closeEditSprintPopup() {
-        sprintWindow.hideToNode(addSprintBtn, mainPane);
+        sprintWindow.hideToNode(addSprintBtn);
     }
     
     private void openEditSprintPopup() {

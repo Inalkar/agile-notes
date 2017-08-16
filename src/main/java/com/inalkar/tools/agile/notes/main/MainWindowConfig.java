@@ -1,6 +1,5 @@
 package com.inalkar.tools.agile.notes.main;
 
-import com.inalkar.tools.agile.notes.main.controller.MainController;
 import com.inalkar.tools.agile.notes.util.dialog.ErrorDialogsUtil;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

@@ -1,7 +1,6 @@
 package com.inalkar.tools.agile.notes.sprint.view;
 
-import com.inalkar.tools.agile.notes.sprint.controller.SprintWindowController;
-import com.inalkar.tools.agile.notes.sprint.dto.Sprint;
+import com.inalkar.tools.agile.notes.sprint.service.dto.Sprint;
 import com.inalkar.tools.agile.notes.util.javafx.popup.AbstractPopupWindow;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

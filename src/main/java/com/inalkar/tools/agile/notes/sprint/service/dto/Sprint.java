@@ -1,6 +1,4 @@
-package com.inalkar.tools.agile.notes.sprint.dto;
-
-import com.inalkar.daf.storage.api.entity.annotation.Id;
+package com.inalkar.tools.agile.notes.sprint.service.dto;
 
 import java.util.Date;
 import java.util.UUID;

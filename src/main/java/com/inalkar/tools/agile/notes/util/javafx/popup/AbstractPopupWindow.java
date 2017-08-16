@@ -1,7 +1,5 @@
 package com.inalkar.tools.agile.notes.util.javafx.popup;
 
-import com.inalkar.tools.agile.notes.util.javafx.popup.event.OnCloseEvent;
-import javafx.animation.Animation;
 import javafx.animation.ParallelTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -32,6 +30,7 @@ public class AbstractPopupWindow extends TitledPane {
             final Parent fxmlRoot = f.load();
             contentNode = fxmlRoot;
             setContent(fxmlRoot);
+            getContent().setStyle("-fx-padding: 0;");
         } finally {
             f = null;
         }
@@ -42,7 +41,7 @@ public class AbstractPopupWindow extends TitledPane {
         scaleInFromNodeToNodeCenter(this, fromNode, toNode).play();
     }
     
-    public void hideToNode(Node toNode, AnchorPane testNode) {
+    public void hideToNode(Node toNode) {
         ParallelTransition animation = scaleOutToNode(this, toNode);
         animation.setOnFinished((e) -> setVisible(false));
         animation.play();
