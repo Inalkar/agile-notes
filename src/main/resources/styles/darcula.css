@@ -525,19 +525,34 @@
     -fx-background-insets: 0;
     -fx-background-color: rgb(62, 67, 76);
 }
+.list-view.dark-background {
+    -fx-background-color: #3C3F41;
+}
 .list-view > .virtual-flow > .scroll-bar:vertical {
     -fx-background-color: rgb(62, 67, 76);
+}
+.list-view.dark-background > .virtual-flow > .scroll-bar:vertical {
+    -fx-background-color: #3C3F41;
 }
 .list-view > .virtual-flow > .scroll-bar:horizontal {
     -fx-background-color: rgb(62, 67, 76);
 }
+.list-view.dark-background > .virtual-flow > .scroll-bar:horizontal {
+    -fx-background-color: #3C3F41;
+}
 .list-view > .virtual-flow > .corner {
     -fx-background-color: rgb(62, 67, 76);
+}
+.list-view.dark-background > .virtual-flow > .corner {
+    -fx-background-color: #3C3F41;
 }
 /* standard cell */
 .list-cell {
     -fx-background-color: rgb(62, 67, 76);
     -fx-text-fill: rgb(140, 140, 140);
+}
+.list-view.dark-background .list-cell {
+    -fx-background-color: #3C3F41;
 }
 .list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected {
     -fx-background-color: rgb(52, 103, 206);

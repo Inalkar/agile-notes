@@ -21,7 +21,7 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 @Component
-public class ConfirmDialogsUtil extends DialogsUtil{
+public class ConfirmDialogsUtil extends DialogsUtil {
 
     public void confirm(String msg, IDialogEvent onOk, IDialogEvent onCancel) {
         confirm(MessageTitleType.Confirm.getValue(), 

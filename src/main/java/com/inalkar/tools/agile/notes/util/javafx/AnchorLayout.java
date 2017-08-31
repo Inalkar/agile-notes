@@ -10,17 +10,17 @@ public class AnchorLayout extends AnchorPane {
 
     protected Parent mainPane;
 
-    protected AnchorLayout(String fxmlName) {
-        readFXML(fxmlName);
+    protected AnchorLayout(JavaFXController controller, String fxmlName) {
+        readFXML(controller, fxmlName);
     }
 
-    private void readFXML(String fxmlName) {
+    private void readFXML(JavaFXController controller, String fxmlName) {
         FXMLLoader f;
         try {
-            f = new FXMLLoader();
-            final Parent fxmlRoot = f.load(getClass().getClassLoader().getResource(fxmlName));
-            mainPane = (Parent) fxmlRoot;
-            this.getChildren().setAll(fxmlRoot);
+            f = new FXMLLoader(getClass().getClassLoader().getResource(fxmlName));
+            if (controller != null) f.setController(controller);
+            mainPane = f.load();
+            this.getChildren().setAll(mainPane);
         } catch (IOException e) {
             e.printStackTrace();
         }

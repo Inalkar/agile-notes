@@ -5,7 +5,7 @@ import com.inalkar.tools.agile.notes.util.javafx.AnchorLayout;
 public class SprintSettingsLayout extends AnchorLayout {
 
     public SprintSettingsLayout() {
-        super("view/SettingsSprintExtension.fxml");
+        super(null, "view/SettingsSprintExtension.fxml");
     }
 
 }
