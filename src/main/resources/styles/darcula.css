@@ -1,6 +1,10 @@
 .tool-bar {
     -fx-background-color: #3C3F41;
 }
+.tool-bar.top-toolbar {
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-color: rgb(50, 50, 50);
+}
 
 .tool-bar-overflow-button > .arrow {
     -fx-background-color: #ADADAD;
@@ -524,6 +528,10 @@
     -fx-padding: 0;
     -fx-background-insets: 0;
     -fx-background-color: rgb(62, 67, 76);
+}
+.list-view.with-top-toolbar {
+    -fx-border-width: 0px 1px 1px 1px;
+    -fx-border-color: rgb(50, 50, 50);
 }
 .list-view.dark-background {
     -fx-background-color: #3C3F41;

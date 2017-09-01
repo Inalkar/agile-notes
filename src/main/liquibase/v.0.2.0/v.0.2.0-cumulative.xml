@@ -7,4 +7,5 @@
 
     <!-- Should be only links to per-version cumulative changelog files. -->
     <include file="08-30-2017-ticket-type.xml" relativeToChangelogFile="true"/>
+    <include file="09-01-2017-ticket-todo.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>
